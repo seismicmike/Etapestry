@@ -7,6 +7,8 @@
 
 namespace SeismicMike\Etapestry;
 
+use SeismicMike\Etapestry\SoapClientInterface;
+
 /**
  * SoapClient Base is a base class for Soap Client Interfaces.
  */

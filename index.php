@@ -5,19 +5,15 @@
  * An example usage of this library.
  */
 
-// Configure the NuSoap API.
-// require_once '/path/to/nusoap.php';
-// require_once 'NuSoapClient.php';
-// require_once 'Etapestry.php';
-
 require_once "vendor/autoload.php";
 
-use Seismicmike\Etapestry;
+use SeismicMike\Etapestry\NuSoapClient;
+use SeismicMike\Etapestry\Etapestry;
 
-$endpoint = 'https://sna.etapetry.com/v2messaging/service?WSDL';
-$username = 'SET USERNAME HERE';
-$password = 'SET PASSWORD HERE';
-$account_ref = 'SET ACCOUNT REFERENCE HERE';
+$endpoint = 'https://sna.etapestry.com/v2messaging/service?WSDL';
+$username = 'mike.lewis';
+$password = 'amandajoy';
+$account_ref = '1232.0.8998928';
 
 $nu_soap = new NuSoapClient($endpoint);
 $etapestry = new Etapestry($nu_soap);

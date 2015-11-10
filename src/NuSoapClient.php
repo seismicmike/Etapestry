@@ -5,7 +5,9 @@
  * Provides the NuSoapClient class.
  */
 
-namespace SeismciMike\Etapestry;
+namespace SeismicMike\Etapestry;
+
+use SeismicMike\Etapestry\SoapClientBase;
 
 /**
  * Implementation of the SoapClientInterface that uses the NuSoap library.
@@ -24,7 +26,7 @@ class NuSoapClient extends SoapClientBase {
    *   The WSDL Endpoint to connect to.
    */
   public function __construct($endpoint) {
-    $this->apiConnection = new nusoap_client($endpoint, TRUE, FALSE, FALSE, FALSE, FALSE, 12000000, 12000000);
+    $this->apiConnection = new \nusoap_client($endpoint, TRUE, FALSE, FALSE, FALSE, FALSE, 12000000, 12000000);
     return $this;
   }
 
@@ -45,7 +47,7 @@ class NuSoapClient extends SoapClientBase {
       $new_endpoint = $this->apiConnection->call('login', array($username, $password));
       $this->checkStatus();
     }
-    catch (Exception $e) {
+    catch (\Exception $e) {
       // @todo Handle the exception.
       throw $e;
     }
@@ -125,7 +127,7 @@ class NuSoapClient extends SoapClientBase {
         // $debug['debug'] = $this->apiConnection->getDebug();
       }
 
-      throw new Exception("Etapestry Communication Error: " . $debug['message']);
+      throw new \Exception("Etapestry Communication Error: " . $debug['message']);
     }
 
     return TRUE;

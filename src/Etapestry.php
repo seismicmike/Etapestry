@@ -7,6 +7,8 @@
 
 namespace SeismicMike\Etapestry;
 
+use SeismicMike\Etapestry\SoapClientInterface;
+
 /**
  * Establishes a connection to Etapestry.
  */
