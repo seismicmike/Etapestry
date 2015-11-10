@@ -10,10 +10,11 @@ require_once "vendor/autoload.php";
 use SeismicMike\Etapestry\NuSoapClient;
 use SeismicMike\Etapestry\Etapestry;
 
+// A more adavanced/robust implementation will have ways of configuring these.
 $endpoint = 'https://sna.etapestry.com/v2messaging/service?WSDL';
-$username = 'mike.lewis';
-$password = 'amandajoy';
-$account_ref = '1232.0.8998928';
+$username = 'ETAPESTRY USERNAME';
+$password = 'ETAPESTRY PASSWORD';
+$account_ref = 'ACCOUNT REFERENCE';
 
 $nu_soap = new NuSoapClient($endpoint);
 $etapestry = new Etapestry($nu_soap);

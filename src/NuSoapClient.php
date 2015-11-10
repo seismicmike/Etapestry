@@ -7,7 +7,7 @@
 
 namespace SeismicMike\Etapestry;
 
-use SeismicMike\Etapestry\SoapClientBase;
+// use SeismicMike\Etapestry\SoapClientBase;
 
 /**
  * Implementation of the SoapClientInterface that uses the NuSoap library.
@@ -109,7 +109,6 @@ class NuSoapClient extends SoapClientBase {
     if ($this->apiConnection->fault || $this->apiConnection->getError()) {
       $debug = array(
         'message' => 'Unidentified Error.',
-        // 'client' => $this->apiConnection,
         'lastMethod' => $this->getLastMethod(),
         'lastArguments' => $this->getLastArguments(),
         'lastResult' => $this->getLastResult(),
@@ -118,13 +117,11 @@ class NuSoapClient extends SoapClientBase {
       if (!$this->apiConnection->fault) {
         $debug['message'] = $this->apiConnection->getError();
         $debug['error'] = $this->apiConnection->getError();
-        // $debug['debug'] = $this->apiConnection->getDebug();
       }
       else {
         $debug['message'] = $this->apiConnection->faultstring;
         $debug['fault_code'] = $this->apiConnection->faultcode;
         $debug['fault_string'] = $this->apiConnection->faultstring;
-        // $debug['debug'] = $this->apiConnection->getDebug();
       }
 
       throw new \Exception("Etapestry Communication Error: " . $debug['message']);
