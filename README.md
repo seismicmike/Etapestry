@@ -55,7 +55,8 @@ $endpoint = 'https://sna.etapestry.com/v2messaging/service?WSDL';
 $client = new NuSoapClient($endpoint);
 ```
 
-// This class
+// Then pass the Soap Client to the Etapestry class and establish your
+connection.
 ```
 $etapestry = new Etapestry($client);
 $etapestry->setUsername($username);
@@ -63,7 +64,7 @@ $etapestry->setPassword($password);
 $etapestry->connect();
 ```
 
-// Download an Account:
+// Now you can download an account and do whatever you need to with the API:
 ```
 $account = $etapestry->getAccount('123.1.123124');
 ```
