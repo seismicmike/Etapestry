@@ -1,2 +1,2 @@
 # Etapestry
-A PHP Class that can be used to communicate with Etapestry
+A Generic PHP library that can be used to communicate with Etapestry
