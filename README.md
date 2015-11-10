@@ -27,16 +27,19 @@ defined by the Etapestry class on to the SoapClient as an API call to
 Etapestry.
 
 Dependencies:
-- NuSoap version 0.9.5
 - PHP cURL
 - An Etapestry Database
 - PHP 5.3+
+- Composer
 
 Example Usage:
 
 // Define and configure the credentials how you wish.
-$username = 'myusername';
-$password = 'mypassword';
+    $username = 'myusername';
+    $password = 'mypassword';
+
+// Also define the URL of the Etapestry WSDL file.
+    $endpoint = 'https://sna.etapestry.com/v2messaging/service?WSDL';
 
 // Instantiate a SoapClientInterface as defined in this library.
 // The Etapestry class is agnostic of the specific SOAP library used. I use
@@ -44,14 +47,16 @@ $password = 'mypassword';
 // sure to use version 0.9.5). You could also use the PHP built-in SOAP
 // library if you wish, though I have not written a SoapClientInterface that
 // uses it.
-$client = new NuSoapClient();
+    $client = new NuSoapClient($endpoint);
 
 // This class
-$etapestry = new Etapestry($client);
-$etapestry->connect($username, $password);
+    $etapestry = new Etapestry($client);
+    $etapestry->setUsername($username);
+    $etapestry->setPassword($password);
+    $etapestry->connect();
 
 // Download an Account:
-$account = $etapestry->getAccount('123.1.123124');
+    $account = $etapestry->getAccount('123.1.123124');
 
 // You'll notice that the Etapestry class does not define a getAccount method,
 but this still downloads the account (provided that reference is a valid one.)
