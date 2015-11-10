@@ -1,0 +1,25 @@
+{
+    "name": "seismicmike/Etapestry",
+    "description": "Etapestry API Abstraction Library",
+    "license": "LGPLv2",
+    "keywords": ["etapestry"],
+    "authors": [
+        {
+            "name": "Michael Lewis",
+            "homepage": "http://sourceforge.net/u/seismicmike/profile/",
+            "email": "seismicmike@gmail.com"
+        },
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "deviservi/nusoap": "^1.123"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.0.*"
+    }
+    "autoload": {
+        "psr-4": {
+            "SeismicMike\\Etapestry\\": "src"
+        }
+    }
+}

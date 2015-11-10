@@ -5,7 +5,7 @@
  * The Etapestry Class that abstracts interactions with the API.
  */
 
-require_once 'SoapClientInterface.php';
+namespace SeismicMike\Etapestry;
 
 /**
  * Establishes a connection to Etapestry.
@@ -103,13 +103,6 @@ class Etapestry {
    *   Any API Errors will be thrown as an Exception.
    */
   public function __call($method, array $arguments = array()) {
-    if (ow_etapestry_is_debug_mode_enabled()) {
-      watchdog('Etapestry API', 'Calling method ' . $method . '():<br /><pre>' . print_r(array(
-          'Arguments' => $arguments,
-          'Stack Trace' => debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS),
-        ), TRUE) . '</pre>');
-    }
-
     return $this->soapClient->call($method, $arguments);
   }
 

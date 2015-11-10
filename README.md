@@ -1,8 +1,10 @@
 # Etapestry
 A Generic PHP library that can be used to communicate with Etapestry
 
-This code snippet is not intended to be a fully functional library. Neither is
-it intended to be integrated with any particular framework.
+This code snippet is not intended to be a fully robust library, though it will
+function in a basic sense. Neither is it intended to be integrated with any
+particular framework, though the code it is based on was written as part of a
+Drupal 7 module.
 
 The purpose of this snippet is to demonstrate my understanding of certain PHP
 Principles, namely interfaces, abstract classes and magic methods.
@@ -23,6 +25,12 @@ So the key component here is the use of magic methods. I used __call() mainly
 to pass any method calls to the Etapestry class that were not specifically
 defined by the Etapestry class on to the SoapClient as an API call to
 Etapestry.
+
+Dependencies:
+- NuSoap version 0.9.5
+- PHP cURL
+- An Etapestry Database
+- PHP 5.3+
 
 Example Usage:
 

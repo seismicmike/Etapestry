@@ -5,7 +5,7 @@
  * Provides an abstract Base SoapClientInterface class.
  */
 
-require_once 'SoapClientInterface.php';
+namespace SeismicMike\Etapestry;
 
 /**
  * SoapClient Base is a base class for Soap Client Interfaces.

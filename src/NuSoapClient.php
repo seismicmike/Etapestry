@@ -5,7 +5,7 @@
  * Provides the NuSoapClient class.
  */
 
-require_once 'SoapClientBase.php';
+namespace SeismciMike\Etapestry;
 
 /**
  * Implementation of the SoapClientInterface that uses the NuSoap library.
@@ -51,10 +51,6 @@ class NuSoapClient extends SoapClientBase {
     }
 
     if ("" != $new_endpoint) {
-      watchdog('NuSoapClient', 'Alternate Endpoint Provided: !endpoint', array(
-        '!endpoint' => $new_endpoint,
-      ));
-
       $this->apiConnection->setEndpoint($new_endpoint);
       $this->connect($username, $password);
     }
@@ -129,7 +125,6 @@ class NuSoapClient extends SoapClientBase {
         // $debug['debug'] = $this->apiConnection->getDebug();
       }
 
-      watchdog('Etapesry Exception', sprintf("Debug: <pre>%s</pre>", print_r($debug, TRUE)));
       throw new Exception("Etapestry Communication Error: " . $debug['message']);
     }
 

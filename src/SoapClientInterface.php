@@ -8,6 +8,8 @@
  * from NuSoap to PHP Soap or to some other soap method.
  */
 
+namespace SeismicMike\Etapestry;
+
 /**
  * Defines the interface for Etapestry Soap Clients.
  */
