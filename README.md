@@ -35,8 +35,10 @@ Dependencies:
 Example Usage:
 
 // Define and configure the credentials how you wish.
-    $username = 'myusername';
-    $password = 'mypassword';
+```
+$username = 'myusername';
+$password = 'mypassword';
+```
 
 // Also define the URL of the Etapestry WSDL file.
 ```
